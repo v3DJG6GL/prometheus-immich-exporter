@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prometheus-immich-exporter"
+version = "1.2.1"
+description = "Prometheus exporter for immich"
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["prometheus", "immich"]
+dependencies = [
+    "prometheus_client>=0.21,<1",
+    "requests>=2.32,<3",
+    "python-json-logger>=2.0,<3",
+    "psutil>=6.1,<7",
+]
+
+[tool.setuptools]
+packages = ["immich_exporter"]
+
+[project.scripts]
+immich_exporter = "immich_exporter.exporter:main"
