@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.13-slim-bookworm
 
 ENV PYTHONUNBUFFERED=1
 
@@ -13,21 +13,6 @@ ENV EXPORTER_LOG_LEVEL="INFO"
 WORKDIR /code
 COPY . .
 
-# arm64 needs gcc and python3-dev for `pip3 install`
-# python version in python3-dev from bookworm is 3.11 (used same python verion in FROM)
-# amd64 python image version has all dependencies installed already
-
-ARG TARGETPLATFORM
-RUN if [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
-        apt-get update  \
-        && apt-get install -y --no-install-recommends gcc python3-dev  \
-        && pip3 install --no-cache-dir .  \
-        && apt-get remove -y --purge gcc python3-dev  \
-        && apt-get autoremove -y  \
-        && apt-get clean  \
-        && rm -rf /var/lib/apt/lists/* ; \
-else \
-    pip3 install --no-cache-dir . ; \
-fi
+RUN pip3 install --no-cache-dir .
 
 ENTRYPOINT [ "immich_exporter" ]
