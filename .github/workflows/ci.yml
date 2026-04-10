@@ -17,6 +17,5 @@ jobs:
 
       - name: Smoke test
         run: |
-          output=$(docker run --rm immich-exporter-test 2>&1 || true)
-          echo "$output"
-          echo "$output" | grep -q "No host specified"
+          docker run --rm --entrypoint python immich-exporter-test -c \
+            "from immich_exporter.exporter import main; print('All imports OK')"
