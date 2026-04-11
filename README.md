@@ -1,4 +1,4 @@
-# Fork of https://github.com/friendlyFriend4000/prometheus-immich-exporter to keep dependencies updated :)
+### Fork of [friendlyFriend4000/prometheus-immich-exporter](https://github.com/friendlyFriend4000/prometheus-immich-exporter) to keep dependencies updated :)
 
 
 
