@@ -1,4 +1,4 @@
-# Active development of this project has been retired in favor of [ImmichStat](https://github.com/friendlyFriend4000/ImmichStat)
+# Fork of https://github.com/friendlyFriend4000/prometheus-immich-exporter to keep dependencies updated :)
 
 
 
