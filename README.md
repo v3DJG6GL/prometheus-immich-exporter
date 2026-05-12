@@ -1,6 +1,7 @@
-### Fork of [friendlyFriend4000/prometheus-immich-exporter](https://github.com/friendlyFriend4000/prometheus-immich-exporter) to keep dependencies updated :)
-
-
+> [!NOTE]
+> This repository is a fork of [friendlyFriend4000/prometheus-immich-exporter](https://github.com/friendlyFriend4000/prometheus-immich-exporter)
+> 
+> The main reason for its existence is to ensure **dependencies** are **kept up to date.** :)
 
 
 ## Prometheus Immich exporter
